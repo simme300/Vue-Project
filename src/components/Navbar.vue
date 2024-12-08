@@ -23,7 +23,8 @@ defineProps({
 		<nav class="nav-two">
 			<ul class="nav-list-two">
 				<li class="nav-item-two"><a href="#"></a>Login</li>
-				<li class="nav-item-two"><a href="#"></a>Settings</li>
+				<li class="pi pi-cart-arrow-down"></li>
+				<li class="pi pi-cog"></li>
 			</ul>
 		</nav>
 	</div>
@@ -87,6 +88,19 @@ a:focus {
 }
 
 .pi-bars:hover {
+	cursor: pointer;
+	color: hsl(200, 100%, 30%);
+}
+
+.pi-cart-arrow-down,
+.pi-cog {
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	margin-left: 20px;
+}
+
+.pi-cart-arrow-down:hover,
+.pi-cog:hover {
 	cursor: pointer;
 	color: hsl(200, 100%, 30%);
 }

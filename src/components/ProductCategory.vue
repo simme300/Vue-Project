@@ -10,17 +10,17 @@ defineProps({
 </script>
 
 <template>
-	<main class="main-content">
+	<section class="category-section">
 		<section class="content-section">
 			<button v-for="title in titles" :key="title" class="item">
 				{{ title }}
 			</button>
 		</section>
-	</main>
+	</section>
 </template>
 
 <style>
-.main-content {
+.category-section {
 	display: flex;
 	justify-content: center;
 }

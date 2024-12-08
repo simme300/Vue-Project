@@ -1,7 +1,8 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
 import Searchbar from './components/Searchbar.vue';
-import Content from './components/Content.vue';
+import ProductCategory from './components/ProductCategory.vue';
+import ProductDescription from './components/ProductDescription.vue';
 
 const categoryTitles = [
 	'Category',
@@ -17,7 +18,8 @@ const categoryTitles = [
 <template>
 	<Navbar></Navbar>
 	<Searchbar></Searchbar>
-	<Content :titles="categoryTitles"></Content>
+	<ProductCategory :titles="categoryTitles"></ProductCategory>
+	<ProductDescription></ProductDescription>
 </template>
 
 <style>
