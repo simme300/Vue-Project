@@ -14,15 +14,22 @@ defineProps({
 	<div class="nav-container">
 		<nav class="nav-bar">
 			<ul class="nav-list">
-				<li class="nav-item"><a href="#"></a>Home</li>
-				<li class="nav-item"><a href="#"></a>About</li>
-				<li class="nav-item"><a href="#"></a>Contact</li>
+				<li class="nav-item"><router-link to="/">Home</router-link></li>
+				<li class="nav-item"><router-link to="/About">About</router-link></li>
+				<li class="nav-item">
+					<router-link to="/Contact">Contact</router-link>
+				</li>
 			</ul>
 		</nav>
 		<span class="header">{{ title }}</span>
 		<nav class="nav-two">
 			<ul class="nav-list-two">
-				<li class="nav-item-two"><a href="#"></a>Login</li>
+				<li class="nav-item-two">
+					<router-link to="/login">Login</router-link>
+				</li>
+				<li class="create">
+					<router-link to="/create">Create Account</router-link>
+				</li>
 				<li class="pi pi-cart-arrow-down"></li>
 				<li class="pi pi-cog"></li>
 			</ul>
@@ -60,14 +67,29 @@ defineProps({
 	font-size: 1.2rem;
 }
 
+.create {
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	background-color: hsl(200, 100%, 20%);
+	border-radius: 1000px;
+}
+
+.create:hover {
+	background-color: hsl(200, 100%, 30%);
+}
+
+.nav-item > * {
+	color: white;
+	text-decoration: none;
+}
+
 .nav-item:hover,
 .nav-item-two:hover {
 	background-color: hsl(200, 100%, 30%);
 	border-radius: 1000px;
 }
 
-.nav-item.active,
-a:focus {
+.nav-item:focus {
 	background-color: hsl(200, 100%, 30%);
 	border-radius: 1000px;
 }
