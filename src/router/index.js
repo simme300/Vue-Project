@@ -1,15 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Login from '../views/Login.vue';
 import Home from '../views/Home.vue';
-import CreateAccount from '../views/CreateAccount.vue';
 
 const router = createRouter({
 	history: createWebHistory(),
 
 	routes: [
-		{ path: '/login', name: 'Login', component: Login },
 		{ path: '/', name: 'Home', component: Home },
-		{ path: '/create', name: 'Create', component: CreateAccount },
+		{
+			path: '/login',
+			name: 'Login',
+			component: () => import('../views/Login.vue'),
+		},
+		{
+			path: '/create',
+			name: 'Create',
+			component: () => import('../views/CreateAccount.vue'),
+		},
+		{
+			path: '/contact',
+			name: 'Contact',
+			component: () => import('../views/Contact.vue'),
+		},
+		{
+			path: '/about',
+			name: 'AboutPage',
+			component: () => import('../views/AboutPage.vue'),
+		},
 	],
 });
 

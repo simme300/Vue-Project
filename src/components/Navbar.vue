@@ -15,9 +15,9 @@ defineProps({
 		<nav class="nav-bar">
 			<ul class="nav-list">
 				<li class="nav-item"><router-link to="/">Home</router-link></li>
-				<li class="nav-item"><router-link to="/About">About</router-link></li>
+				<li class="nav-item"><router-link to="/about">About</router-link></li>
 				<li class="nav-item">
-					<router-link to="/Contact">Contact</router-link>
+					<router-link to="/contact">Contact</router-link>
 				</li>
 			</ul>
 		</nav>

@@ -1,16 +1,29 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { userRouter } from './routes/login.js';
+import cors from 'cors';
+import userRouter from './routes/login.js';
+import createRouter from './routes/createuser.js';
 
 dotenv.config().parsed;
 const app = express();
 const port = process.env.PORT || 5000;
 const db = process.env.MONGO_URI;
 
+// CORS config
+app.use(
+	cors({
+		origin: 'http://localhost:5173',
+		methods: ['GET', 'POST'],
+		allowedHeaders: ['Content-Type'],
+	})
+);
+
 // middleware
 app.use(express.json());
+
 app.use('/login', userRouter);
+app.use('/createuser', createRouter);
 
 async function connectToMongoDb() {
 	try {
