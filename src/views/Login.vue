@@ -1,12 +1,41 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+const url = `${import.meta.env.VITE_API_BASE_URL}/login`;
+
 const password = ref('');
 const email = ref('');
+const router = useRouter();
+
+async function signIn() {
+	try {
+		const response = await fetch(url, {
+			method: 'POST',
+			body: JSON.stringify({
+				email: email.value,
+				password: password.value,
+			}),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+		if (!response.ok) {
+			const error = await response.json();
+			alert(`Error: ${error.msg}`);
+		}
+		const data = await response.json();
+		console.log(data.msg);
+		router.push('/');
+	} catch (error) {
+		console.log(error);
+		alert('Username or password is invalid');
+	}
+}
 </script>
 
 <template>
 	<h1>Company Name / Logo</h1>
-	<form>
+	<form @submit.prevent="signIn">
 		<fieldset>
 			<legend class="login-legend">Login</legend>
 			<label for="email">Email: </label>

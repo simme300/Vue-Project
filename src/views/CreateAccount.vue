@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+const url = `${import.meta.env.VITE_API_BASE_URL}/creatuser`;
 
 const firstName = ref('');
 const lastName = ref('');
@@ -16,7 +17,7 @@ async function createAccount() {
 		return;
 	}
 	try {
-		const response = await fetch('http://localhost:3000/createuser', {
+		const response = await fetch(url, {
 			method: 'POST',
 			body: JSON.stringify({
 				firstName: firstName.value,
