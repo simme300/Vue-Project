@@ -1,15 +1,5 @@
 <script setup>
 import { RouterView } from 'vue-router';
-
-const categoryTitles = [
-	'Category',
-	'Category',
-	'Category',
-	'Category',
-	'Category',
-	'Category',
-	'Category',
-];
 </script>
 
 <template>
